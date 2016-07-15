@@ -22,6 +22,23 @@ namespace Addressbook
       post["/new_contact"] = _ => {
         return View["new_contact.cshtml"];
       };
+
+
+
+
+
+      
+
+      Post["/new_contact_add"] = _ => {
+       Contact newContact = new Contact
+       ( Request.Form["contact-fullName"],
+         Request.Form["contact-phoneNumber"],
+         Request.Form["contact-address1"],
+         Request.Form["contact-city"],
+         Request.Form["contact-state"];
+       return View["new_contact_add.cshtml", newContact];
+      };
+
     }
   }
 }
