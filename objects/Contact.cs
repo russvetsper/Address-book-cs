@@ -72,9 +72,21 @@ namespace Addressbook.objects
         _state = newState;
       }
 
+
       public static List<Contact> GetAll()
       {
-        return _instances
+        return _instances;
+      }
+
+
+      public int GetId()
+      {
+        return _id;
+      }
+
+      public static Contact find(int searchId)
+      {
+        return _instances[searchId -1];
       }
   }
 }
