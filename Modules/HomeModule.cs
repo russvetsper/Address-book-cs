@@ -40,6 +40,11 @@ namespace AddressBook
        Request.Form["contact-state"]);
         return View["new_contact_add.cshtml", newContact];
       };
+
+      Post["/clear_contacts"] = _ => {
+        Contact.DeleteAll();
+        return View["clear_contacts.cshtml"];
+      };
     }
   }
 }
