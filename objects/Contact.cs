@@ -1,24 +1,25 @@
-using System.Collection.Generic;
+using System.Collections.Generic;
 
-namespace Addressbook.objects
+namespace AddressBook.Objects
 {
-  public class contact
+  public class Contact
   {
     private string _fullName;
     private string _phoneNumber;
     private string _address;
     private string _city;
     private string _state;
+    private static List<Contact> _instances = new List<Contact> {};
 
     private int _id;
 
-    private contact(string fullName, string phoneNumber, string address, string city, string state )
+    public Contact(string fullName, string phoneNumber, string address, string city, string state )
     {
       _fullName = fullName;
       _phoneNumber = phoneNumber;
       _address = address;
-      _city = city
-      _state = state
+      _city = city;
+      _state = state;
       _instances.Add(this);
       _id = _instances.Count;
     }
@@ -35,7 +36,7 @@ namespace Addressbook.objects
 
     public string getPhoneNumber()
     {
-      return PhoneNumber
+      return _phoneNumber;
     }
       public void SetPhoneNumber(string newPhoneNumber)
     {
