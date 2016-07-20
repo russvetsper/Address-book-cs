@@ -34,7 +34,7 @@ namespace AddressBook.Objects
     }
 
 
-    public string getPhoneNumber()
+    public string GetPhoneNumber()
     {
       return _phoneNumber;
     }

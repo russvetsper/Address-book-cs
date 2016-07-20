@@ -15,8 +15,9 @@ namespace AddressBook
       Get["/new_contact_add"] = _ => {
         return View["new_contact_add.cshtml"];
       };
-      Get["/view_all_contact"] = _ => {
-        return View["view_all_contacts.cshtml"];
+      Get["/view_all_contacts"] = _ => {
+        List<Contact> allContacts = Contact.GetAll();
+        return View["view_all_contacts.cshtml",allContacts];
       };
 
       Get["/new_contact"] = _ => {
@@ -40,10 +41,10 @@ namespace AddressBook
         return View["new_contact_add.cshtml", newContact];
       };
 
-      Post["/clear_contacts"] = _ => {
-        Contact.DeleteAll();
-        return View["clear_contacts.cshtml"];
-      };
+      // Post["/clear_contacts"] = _ => {
+      //   Contact.DeleteAll();
+      //   return View["clear_contacts.cshtml"];
+      // };
     }
   }
 }
