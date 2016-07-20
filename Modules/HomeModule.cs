@@ -41,10 +41,10 @@ namespace AddressBook
         return View["new_contact_add.cshtml", newContact];
       };
 
-      // Post["/clear_contacts"] = _ => {
-      //   Contact.DeleteAll();
-      //   return View["clear_contacts.cshtml"];
-      // };
+      Post["/clear_contacts"] = _ => {
+        Contact.ClearAll();
+        return View["clear_contacts.cshtml"];
+      };
     }
   }
 }
