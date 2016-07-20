@@ -16,13 +16,12 @@ namespace AddressBook
         return View["new_contact_add.cshtml"];
       };
       Get["/view_all_contact"] = _ => {
-        return View["view_all_contact.cshtml"];
+        return View["view_all_contacts.cshtml"];
       };
 
       Get["/new_contact"] = _ => {
         return View["new_contact.cshtml"];
       };
-
 
 
       Get["/contact/{id}"] = parameters => {
